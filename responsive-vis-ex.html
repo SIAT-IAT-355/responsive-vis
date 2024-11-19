@@ -67,7 +67,7 @@
       let device_type;
       let params;
 
-      function setParams() {
+      function setResponsiveParams() {
         // Determine the device type based on screen width
         (screen_width = window.innerWidth), device_type;
         if (screen_width >= 1200) device_type = "xl";
@@ -346,11 +346,11 @@
     </main>
     <script>
       // Create the chart on page load
-      setParams();
+      setResponsiveParams();
       make_chart();
       // Uncomment the line below to make the chart responsive to window resizing
       window.onresize = () => {
-        setParams();
+        setResponsiveParams();
         make_chart();
       };
     </script>
