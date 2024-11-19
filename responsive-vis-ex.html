@@ -63,68 +63,73 @@
         { name: "Helen", approval: 45 },
       ];
 
-      // Determine the device type based on screen width
-      let screen_width = window.innerWidth,
-        device_type;
-      if (screen_width >= 1200) device_type = "xl";
-      else if (screen_width >= 992) device_type = "l";
-      else if (screen_width >= 768) device_type = "m";
-      else if (screen_width >= 576) device_type = "s";
-      else device_type = "xs";
+      let screen_width;
+      let device_type;
+      let params;
 
-      // Parameters for different device types
-      const params = {
-        xl: {
-          width: 1140 - 24,
-          height: 600,
-          padding: 15,
-          axis_area: 30,
-          font_size: 16,
-          bar_emphasis: "steelblue",
-          text_emphasis: "white",
-          dir: "v",
-        },
-        l: {
-          width: 960 - 24,
-          height: 520,
-          padding: 15,
-          axis_area: 30,
-          font_size: 14,
-          bar_emphasis: "steelblue",
-          text_emphasis: "white",
-          dir: "v",
-        },
-        m: {
-          width: 720 - 24,
-          height: 520,
-          padding: 10,
-          axis_area: 20,
-          font_size: 14,
-          bar_emphasis: "darkred",
-          text_emphasis: "white",
-          dir: "v",
-        },
-        s: {
-          width: 540 - 24,
-          height: 720,
-          padding: 7,
-          axis_area: 50,
-          font_size: 14,
-          bar_emphasis: "darkred",
-          text_emphasis: "white",
-          dir: "h",
-        },
-        xs: {
-          width: screen_width - 24,
-          height: 400,
-          padding: 5,
-          axis_area: 0,
-          font_size: 14,
-          bar_emphasis: "darkred",
-          text_emphasis: "darkred",
-          dir: "h",
-        },
-      }[device_type];
+      function setParams() {
+        // Determine the device type based on screen width
+        (screen_width = window.innerWidth), device_type;
+        if (screen_width >= 1200) device_type = "xl";
+        else if (screen_width >= 992) device_type = "l";
+        else if (screen_width >= 768) device_type = "m";
+        else if (screen_width >= 576) device_type = "s";
+        else device_type = "xs";
+
+        // Parameters for different device types
+        params = {
+          xl: {
+            width: 1140 - 24,
+            height: 600,
+            padding: 15,
+            axis_area: 30,
+            font_size: 16,
+            bar_emphasis: "steelblue",
+            text_emphasis: "white",
+            dir: "v",
+          },
+          l: {
+            width: 960 - 24,
+            height: 520,
+            padding: 15,
+            axis_area: 30,
+            font_size: 14,
+            bar_emphasis: "steelblue",
+            text_emphasis: "white",
+            dir: "v",
+          },
+          m: {
+            width: 720 - 24,
+            height: 520,
+            padding: 10,
+            axis_area: 20,
+            font_size: 14,
+            bar_emphasis: "darkred",
+            text_emphasis: "white",
+            dir: "v",
+          },
+          s: {
+            width: 540 - 24,
+            height: 720,
+            padding: 7,
+            axis_area: 50,
+            font_size: 14,
+            bar_emphasis: "darkred",
+            text_emphasis: "white",
+            dir: "h",
+          },
+          xs: {
+            width: screen_width - 24,
+            height: 400,
+            padding: 5,
+            axis_area: 0,
+            font_size: 14,
+            bar_emphasis: "darkred",
+            text_emphasis: "darkred",
+            dir: "h",
+          },
+        }[device_type];
+      }
 
       // Function to create the chart
       function make_chart() {
@@ -341,9 +346,13 @@
     </main>
     <script>
       // Create the chart on page load
+      setParams();
       make_chart();
       // Uncomment the line below to make the chart responsive to window resizing
-      // window.onresize = make_chart;
+      window.onresize = () => {
+        setParams();
+        make_chart();
+      };
     </script>
   </body>
 </html>
