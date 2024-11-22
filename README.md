@@ -12,13 +12,13 @@ This project demonstrates a responsive data visualization using D3.js and Bootst
 
 ## How It Works
 
-1. **HTML and CSS**: The page structure and styling are defined using HTML and CSS, with Bootstrap providing the responsive layout.
-2. **JavaScript and D3.js**: The chart is created and rendered using D3.js. The script dynamically adjusts the chart's parameters based on the screen size.
-3. **Media Queries**: CSS media queries are used to apply different styles to the header based on the screen size.
+1. **HTML and CSS**: The page structure and styling are defined using `index.html` and `styles.css`, with Bootstrap providing the responsive layout.
+2. **JavaScript and D3.js**: The chart is created and rendered using D3.js in `responsive-vis.js`. The script dynamically adjusts the chart's parameters based on the screen size.
+3. **Media Queries**: CSS media queries in `styles.css` are used to apply different styles to the header based on the screen size.
 
 ## Usage
 
-To view the responsive visualization, simply open the `responsive-vis-ex.html` file in a web browser. The chart will automatically adjust to fit the screen size of the device.
+To view the responsive visualization, navigate to the project directory and simply open the `index.html` file in a web browser. The chart will automatically adjust to fit the screen size of the device.
 
 ## Dependencies
 
