@@ -1,0 +1,50 @@
+/* Media queries for responsive header styling */
+header {
+    transition: color 0.3s ease, background-color 0.3s ease, border-bottom 0.3s ease;
+}
+
+@media screen and (min-width: 1200px) {
+    header {
+        color: black;
+        background-color: transparent;
+        border-bottom: none;
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+    header {
+        color: steelblue;
+        background-color: transparent;
+        border-bottom: none;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    header {
+        color: darkred;
+        background-color: transparent;
+        border-bottom: none;
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+    header {
+        color: darkred;
+        background-color: transparent;
+        border-bottom: 1px solid darkred;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    header {
+        background-color: darkred;
+        color: white;
+        border-bottom: none;
+    }
+}
+
+/* Ensure the chart area takes full width */
+#chart-area {
+    width: 100%;
+    height: auto;
+}
